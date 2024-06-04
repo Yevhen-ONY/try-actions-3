@@ -1,0 +1,13 @@
+name: Issue Tracker
+
+on: issues
+
+jobs:
+  info:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Event details
+        run: echo "${{ toJSON(github.event) }}"
+
+
+
