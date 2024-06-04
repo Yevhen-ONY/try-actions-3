@@ -12,6 +12,9 @@ jobs:
       - name: Install node
         uses: actions/setup-node@v4
 
+      - name: Get dependencies
+        run: npm ci
+
       - name: Lint
         run: npm run lint
 
@@ -19,7 +22,7 @@ jobs:
         run: npm test
 
       - name: Build
-        run: npm build
+        run: npm run build
 
       - name: Deploy
         run: echo "Deploying..."
