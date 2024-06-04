@@ -1,0 +1,22 @@
+name: CI
+
+on: [push, workflow_dispatch]
+
+jobs:
+  ci:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Get code
+        uses: actions/checkout@v4
+
+      - name: Install node
+        uses: actions/setup-node@v4
+
+      - name: Lint
+        run: npm lint
+
+      - name: Test
+        run: npm Test
+
+      - name: Deploy
+        run: echo "Deploying..."
